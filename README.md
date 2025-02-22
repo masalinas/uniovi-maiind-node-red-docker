@@ -1,5 +1,5 @@
 # Description
-Uniovi node-red and Docker training. This repo it's a Dockerfile to create a custom node-red including:
+Uniovi node-red and Docker training. This repo it's a Dockerfile to create a custom node-red service including:
  - Securize with a default credentials admin/undergorund
  - With some libraries just installed: mongodb and dashboard
  - With a simple sample flow
