@@ -1,0 +1,75 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Greeting Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a80abb0f9ab3eb9c",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "2b4e4bdc605b60f7"
+            ]
+        ]
+    },
+    {
+        "id": "b618edfeaacb9b94",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "Greeting",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2b4e4bdc605b60f7",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Upper Case",
+        "func": "msg.payload = msg.payload.toUpperCase();\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "b618edfeaacb9b94"
+            ]
+        ]
+    }
+]
