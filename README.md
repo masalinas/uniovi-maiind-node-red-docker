@@ -1,35 +1,96 @@
 # Description
 Uniovi node-red and Docker training. This repo it's a Dockerfile to create a custom node-red service including:
- - Securized with default credentials **admin/underground**.
+ - Securized with default credentials **admin/password**.
  - With [node-red-node-mongodb](https://flows.nodered.org/node/node-red-node-mongodb) and [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) nodes just installed.
  - With a simple flow called **Greeting Flow**.
 
 ## Steps 
 Follow the next steps to build an run your custom node-red container.
 
-### STEP01: Build your custom node-red docker image
+### STEP01: start a sample node-red to get the settings.js file and create a admin password
  ```
-docker build -t uniovi-node-red:1.0.0 .
- ```
-
-### STEP02: Start your custom node-red docker container
- ```
-docker run -d --name uniovi-node-red -p 1880:1880 -v node_red_data:/data uniovi-node-red:1.0.0
+$ docker run -d --rm --name node-red nodered/node-red
  ```
 
-### STEP03: Tag your custom node-red docker image to be published in your docker-hub private repository
+login inside  and execute this command to create a password
+ ```
+$ docker exec -it node-red bash
+$ node-red admin hash-pw
+ ```
+
+from host copy the settings.js file 
+ ```
+$ docker cp node-red:/data/settings.js ./
+ ```
+
+stop the sample node-red
 ```
-docker tag uniovi-node-red:1.0.0 ofertoio/uniovi-node-red:1.0.0
+$ docker stop node-red
+```
+
+### STEP02: Create a network 
+```
+$ docker network create uniovi
+```
+
+### STEP03: Build your custom node-red docker image
+ ```
+$ docker build -t uniovi-node-red:1.0.0 .
  ```
 
-### STEP04: Publish your custom node-red docker image in your private repository to be shared
+### STEP04: Start your custom node-red docker container in the network uniovi
+ ```
+$ docker run \
+-d \
+--name uniovi-node-red \
+-p 1880:1880 \
+--network uniovi \
+-v node_red_data:/data \
+uniovi-node-red:2.0.0
+```
+
+![Porainer](captures/portainer.png "Porainer")
+
+![node-red-login](captures/node-red-login.png "node-red-login")
+
+![greetings-flow](captures/greetings-flow.png "greetings-flow")
+
+![mongo-flow](captures/mongo-flow.png "mongo-flow")
+
+### STEP05: Tag your custom node-red docker image to be published in your docker-hub private repository
+```
+$ docker tag uniovi-node-red:1.0.0 ofertoio/uniovi-node-red:1.0.0
+ ```
+
+### STEP06: Publish your custom node-red docker image in your private repository to be shared
 Previous to publish in your docker-hub respository you must login inside like this:
  ```
-docker login
+$ docker login
  ```
 
 Then you can publish your image:
 
  ```
-docker push ofertoio/uniovi-node-red:1.0.0
+$ docker push ofertoio/uniovi-node-red:1.0.0
  ```
+
+ ### STEP05: Start mongodb container
+ ```
+ $ docker run \
+ -d \
+ --name uniovi-mongo \
+ -p 27017:27017 \
+ --network uniovi \
+ -e MONGO_INITDB_ROOT_USERNAME=admin \
+ -e MONGO_INITDB_ROOT_PASSWORD=password \
+ -e MONGO_INITDB_DATABASE=maiind \
+ -v mongo_data:/data/db \
+ mongo
+ ```
+
+ ![mongo-connection](captures/mongo-connection.png "mongo-connection")
+
+ ![mongo-compass](captures/mongo-compass.png "mongo-compass")
+
+ 
+ 

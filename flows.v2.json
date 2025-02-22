@@ -1,0 +1,199 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Greeting Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "dcedb728b9c3efae",
+        "type": "tab",
+        "label": "Mongo Flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "23cf5dbbf0c612ec",
+        "type": "mongodb",
+        "hostname": "uniovi-mongo",
+        "topology": "direct",
+        "connectOptions": "authSource=admin&readPreference=primary&ssl=false",
+        "port": 27017,
+        "db": "maiind",
+        "name": "maiind"
+    },
+    {
+        "id": "a80abb0f9ab3eb9c",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "2b4e4bdc605b60f7"
+            ]
+        ]
+    },
+    {
+        "id": "b618edfeaacb9b94",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "Greeting",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2b4e4bdc605b60f7",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Upper Case",
+        "func": "msg.payload = msg.payload.toUpperCase();\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "b618edfeaacb9b94"
+            ]
+        ]
+    },
+    {
+        "id": "5bef7c0b6cea8acc",
+        "type": "mongodb in",
+        "z": "dcedb728b9c3efae",
+        "mongodb": "23cf5dbbf0c612ec",
+        "name": "",
+        "collection": "messages",
+        "operation": "find",
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "0359b58d69dd94fb"
+            ]
+        ]
+    },
+    {
+        "id": "24e0b58ae48c1fc6",
+        "type": "inject",
+        "z": "dcedb728b9c3efae",
+        "name": "Find Messages",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "5bef7c0b6cea8acc"
+            ]
+        ]
+    },
+    {
+        "id": "0359b58d69dd94fb",
+        "type": "debug",
+        "z": "dcedb728b9c3efae",
+        "name": "List Messages",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cb74777a9b28f1d4",
+        "type": "mongodb out",
+        "z": "dcedb728b9c3efae",
+        "mongodb": "23cf5dbbf0c612ec",
+        "name": "",
+        "collection": "messages",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 370,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "807a226714b176f4",
+        "type": "inject",
+        "z": "dcedb728b9c3efae",
+        "name": "Insert Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"device\":\"T01\",\"value\":3.6,\"date\":\"2021-07-15T10:30:48.021Z\"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "cb74777a9b28f1d4"
+            ]
+        ]
+    }
+]

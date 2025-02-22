@@ -10,4 +10,4 @@ USER node-red
 
 # Optionally, copy your Node-RED settings or flows if you have any
 COPY settings.js /data/settings.js
-COPY flows.json /data/flows.json
+COPY flows.v1.json /data/flows.json
