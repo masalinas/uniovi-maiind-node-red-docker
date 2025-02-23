@@ -7,7 +7,7 @@ Maiind mongodb and node-red custom services deployed as Docker Containers locall
     - Sample Collection with some Documents.
 
 - The node-red service include:
-    - Securized with basic credentials.
+    - Securized with basic credentials **admin/password**.
     - With [node-red-node-mongodb](https://flows.nodered.org/node/node-red-node-mongodb) and [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) nodes just installed.
     - With a simple flow called **Greeting Flow**.
 
