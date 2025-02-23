@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "67ba1d33f6ec4786739f88b0"
+  },
+  "device": "Temperature_01",
+  "value": 3,
+  "date": "2021-07-15T10:30:48.021Z"
+},
+{
+  "_id": {
+    "$oid": "67baf58326fa4e0007906f81"
+  },
+  "device": "Temperature_02",
+  "value": 3.6,
+  "date": "2021-07-15T13:23:34.020Z"
+},
+{
+  "_id": {
+    "$oid": "67baf59226fa4e0007906f82"
+  },
+  "device": "Temperature_01",
+  "value": 3.6,
+  "date": "2021-07-15T18:12:20.003Z"
+},
+{
+  "_id": {
+    "$oid": "67baf59326fa4e0007906f83"
+  },
+  "device": "Humidity_01",
+  "value": 3.6,
+  "date": "2021-07-15T19:56:32.432Z"
+}]

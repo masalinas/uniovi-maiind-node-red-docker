@@ -30,23 +30,23 @@ $ docker stop node-red
 
 ### STEP02: Create a network 
 ```
-$ docker network create uniovi
+$ docker network create maiind
 ```
 
 ### STEP03: Build your custom node-red docker image
  ```
-$ docker build -t uniovi-node-red:1.0.0 .
+$ docker build -t maiind-node-red:3.0.0 .
  ```
 
 ### STEP04: Start your custom node-red docker container in the network uniovi
  ```
 $ docker run \
 -d \
---name uniovi-node-red \
+--name maiind-node-red \
+--network maiind \
 -p 1880:1880 \
---network uniovi \
 -v node_red_data:/data \
-uniovi-node-red:2.0.0
+maiind-node-red:3.0.0
 ```
 
 ![Porainer](captures/portainer.png "Porainer")
@@ -59,7 +59,7 @@ uniovi-node-red:2.0.0
 
 ### STEP05: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
-$ docker tag uniovi-node-red:1.0.0 ofertoio/uniovi-node-red:1.0.0
+$ docker tag maiind-node-red:1.0.0 ofertoio/maiind-node-red:1.0.0
  ```
 
 ### STEP06: Publish your custom node-red docker image in your private repository to be shared
@@ -71,21 +71,27 @@ $ docker login
 Then you can publish your image:
 
  ```
-$ docker push ofertoio/uniovi-node-red:1.0.0
+$ docker push ofertoio/maiind-node-red:1.0.0
  ```
 
- ### STEP05: Start mongodb container
+
+### STEP07: Build your custom mongo image
+ ```
+$ docker build -t maiind-mongo:1.0.0 .
+ ```
+
+ ### STEP08: Start mongodb container
  ```
  $ docker run \
  -d \
- --name uniovi-mongo \
+ --name maiind-mongo \
+ --network maiind \
  -p 27017:27017 \
- --network uniovi \
  -e MONGO_INITDB_ROOT_USERNAME=admin \
  -e MONGO_INITDB_ROOT_PASSWORD=password \
  -e MONGO_INITDB_DATABASE=maiind \
  -v mongo_data:/data/db \
- mongo
+ maiind-mongo:1.0.0
  ```
 
  ![mongo-connection](captures/mongo-connection.png "mongo-connection")
