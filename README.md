@@ -59,7 +59,7 @@ maiind-node-red:3.0.0
 
 ### STEP05: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
-$ docker tag maiind-node-red:1.0.0 ofertoio/maiind-node-red:1.0.0
+$ docker tag maiind-node-red:1.0.0 ofertoio/maiind-node-red:3.0.0
  ```
 
 ### STEP06: Publish your custom node-red docker image in your private repository to be shared
