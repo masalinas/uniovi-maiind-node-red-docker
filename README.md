@@ -5,7 +5,7 @@ Uniovi node-red and Docker training. This repo it's a Dockerfile to create a cus
  - With a simple flow called **Greeting Flow**.
 
 ## Steps 
-Follow the next steps to build an run your custom node-red container.
+Follow the next steps to build an run your custom mongodb and node-red container.
 
 ### STEP01: start a sample node-red to get the settings.js file and create an admin password
  ```
