@@ -54,7 +54,7 @@ $ docker push ofertoio/maiind-mongo:1.0.0
 $ docker run -d --rm --name node-red nodered/node-red
  ```
 
-login inside  and execute this command to create a password
+login inside  and execute this command to create the default **admin** password: **password**
  ```
 $ docker exec -it node-red bash
 $ node-red admin hash-pw
