@@ -7,7 +7,7 @@ Uniovi node-red and Docker training. This repo it's a Dockerfile to create a cus
 ## Steps 
 Follow the next steps to build an run your custom node-red container.
 
-### STEP01: start a sample node-red to get the settings.js file and create a admin password
+### STEP01: start a sample node-red to get the settings.js file and create an admin password
  ```
 $ docker run -d --rm --name node-red nodered/node-red
  ```
@@ -23,7 +23,7 @@ from host copy the settings.js file
 $ docker cp node-red:/data/settings.js ./
  ```
 
-stop the sample node-red
+stop the sample node-red. Docker will removed it automatically
 ```
 $ docker stop node-red
 ```
