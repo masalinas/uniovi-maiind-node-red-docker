@@ -1,12 +1,12 @@
 # Description
 Uniovi mongodb and node-red services deployed as Docker Containers
 
-- The custom mongodb serice include:
+- The mongodb service include:
     - Basic Securize
     - Sample Database
     - Sample Collection with some data
 
-- The custom node-red service including:
+- The node-red service include:
     - Securized with default credentials **admin/password**.
     - With [node-red-node-mongodb](https://flows.nodered.org/node/node-red-node-mongodb) and [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) nodes just installed.
     - With a simple flow called **Greeting Flow**.
