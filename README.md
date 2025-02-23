@@ -1,10 +1,10 @@
 # Description
 Maiind mongodb and node-red custom services deployed as Docker Containers locally and published in your private docker-hub rspository.
 
-- The mongodb service include:
-    - Basic Securize
-    - Sample Database
-    - Sample Collection with some data
+- The mongoDB service include:
+    - Basic Securize.
+    - Sample Database.
+    - Sample Collection with some Documents.
 
 - The node-red service include:
     - Securized with default credentials **admin/password**.
@@ -33,7 +33,7 @@ $ docker build -t maiind-mongo:1.0.0 .
  maiind-mongo:1.0.0
  ```
 
-We can use the Open source mongodb client called [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
+We can use the Open source mongoDB manager called [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
 
  ![mongo-connection](captures/mongo-connection.png "mongo-connection")
 
