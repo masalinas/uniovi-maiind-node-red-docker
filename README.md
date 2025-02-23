@@ -2,7 +2,7 @@
 Maiind mongodb and node-red custom services deployed as Docker Containers locally and published in your private docker-hub rspository.
 
 - The mongoDB service include:
-    - Basic Security.
+    - Standalone Basic Security service.
     - Sample Database.
     - Sample Collection with some Documents.
 
