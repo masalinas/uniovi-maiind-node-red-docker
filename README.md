@@ -35,7 +35,7 @@ stop the sample node-red. Docker will removed it automatically
 $ docker stop node-red
 ```
 
-### STEP02: Create a network 
+### STEP02: Create a network maiind
 ```
 $ docker network create maiind
 ```
@@ -45,7 +45,7 @@ $ docker network create maiind
 $ docker build -t maiind-node-red:3.0.0 .
  ```
 
-### STEP04: Start your custom node-red docker container in the network uniovi
+### STEP04: Start your custom node-red docker container in the network maiind
  ```
 $ docker run \
 -d \
@@ -66,7 +66,7 @@ maiind-node-red:3.0.0
 
 ### STEP05: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
-$ docker tag maiind-node-red:1.0.0 ofertoio/maiind-node-red:3.0.0
+$ docker tag maiind-node-red:3.0.0 ofertoio/maiind-node-red:3.0.0
  ```
 
 ### STEP06: Publish your custom node-red docker image in your private repository to be shared
@@ -78,16 +78,15 @@ $ docker login
 Then you can publish your image:
 
  ```
-$ docker push ofertoio/maiind-node-red:1.0.0
+$ docker push ofertoio/maiind-node-red:3.0.0
  ```
-
 
 ### STEP07: Build your custom mongo image
  ```
 $ docker build -t maiind-mongo:1.0.0 .
  ```
 
- ### STEP08: Start mongodb container
+ ### STEP08: Start your custom mongodb container in the network maiind
  ```
  $ docker run \
  -d \
@@ -105,5 +104,12 @@ $ docker build -t maiind-mongo:1.0.0 .
 
  ![mongo-compass](captures/mongo-compass.png "mongo-compass")
 
- 
- 
+ ### STEP09: Tag your custom mongo docker image to be published in your docker-hub private repository
+```
+$ docker tag maiind-mongo:1.0.0 ofertoio/maiind-mongo:1.0.0
+ ```
+
+### STEP10: Publish your custom mongo docker image in your private repository to be shared
+ ```
+$ docker push ofertoio/maiind-mongo:1.0.0
+ ```
