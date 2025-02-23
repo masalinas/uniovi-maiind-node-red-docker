@@ -11,8 +11,8 @@ Uniovi mongodb and node-red services deployed as Docker Containers
     - With [node-red-node-mongodb](https://flows.nodered.org/node/node-red-node-mongodb) and [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) nodes just installed.
     - With a simple flow called **Greeting Flow**.
 
-## Steps 
-Follow the next steps to build an run your custom mongodb and node-red container.
+# Steps 
+Follow the next steps to build an run your custom mongodb and node-red services.
 
 ### STEP01: start a sample node-red to get the settings.js file and create an admin password
  ```
