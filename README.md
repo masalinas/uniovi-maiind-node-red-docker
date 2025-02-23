@@ -33,6 +33,8 @@ $ docker build -t maiind-mongo:1.0.0 .
  maiind-mongo:1.0.0
  ```
 
+We can use the Open source mongodb client called [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
+
  ![mongo-connection](captures/mongo-connection.png "mongo-connection")
 
  ![mongo-compass](captures/mongo-compass.png "mongo-compass")
@@ -96,6 +98,8 @@ maiind-node-red:3.0.0
 ![greetings-flow](captures/greetings-flow.png "greetings-flow")
 
 ![mongo-flow](captures/mongo-flow.png "mongo-flow")
+
+**NOTE**: the mongodb flows imported by the image not set the mongo credentials by security. You must set after login inside node-RED
 
 ### STEP09: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
