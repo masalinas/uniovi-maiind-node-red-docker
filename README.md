@@ -14,7 +14,40 @@ Maiind mongodb and node-red custom services deployed as Docker Containers locall
 # Steps 
 Follow the next steps to build an run your custom mongodb and node-red services.
 
-### STEP01: start a sample node-red to get the settings.js file and create an admin password
+### STEP01: Build your custom mongo image
+ ```
+$ docker build -t maiind-mongo:1.0.0 .
+ ```
+
+ ### STEP02: Start your custom mongodb container in the network maiind
+ ```
+ $ docker run \
+ -d \
+ --name maiind-mongo \
+ --network maiind \
+ -p 27017:27017 \
+ -e MONGO_INITDB_ROOT_USERNAME=admin \
+ -e MONGO_INITDB_ROOT_PASSWORD=password \
+ -e MONGO_INITDB_DATABASE=maiind \
+ -v mongo_data:/data/db \
+ maiind-mongo:1.0.0
+ ```
+
+ ![mongo-connection](captures/mongo-connection.png "mongo-connection")
+
+ ![mongo-compass](captures/mongo-compass.png "mongo-compass")
+
+ ### STEP03: Tag your custom mongo docker image to be published in your docker-hub private repository
+```
+$ docker tag maiind-mongo:1.0.0 ofertoio/maiind-mongo:1.0.0
+ ```
+
+### STEP04: Publish your custom mongo docker image in your private repository to be shared
+ ```
+$ docker push ofertoio/maiind-mongo:1.0.0
+ ```
+
+### STEP05: start a sample node-red to get the settings.js file and create an admin password
  ```
 $ docker run -d --rm --name node-red nodered/node-red
  ```
@@ -35,17 +68,17 @@ stop the sample node-red. Docker will removed it automatically
 $ docker stop node-red
 ```
 
-### STEP02: Create a network maiind
+### STEP06: Create a network maiind
 ```
 $ docker network create maiind
 ```
 
-### STEP03: Build your custom node-red docker image
+### STEP07: Build your custom node-red docker image
  ```
 $ docker build -t maiind-node-red:3.0.0 .
  ```
 
-### STEP04: Start your custom node-red docker container in the network maiind
+### STEP08: Start your custom node-red docker container in the network maiind
  ```
 $ docker run \
 -d \
@@ -64,12 +97,12 @@ maiind-node-red:3.0.0
 
 ![mongo-flow](captures/mongo-flow.png "mongo-flow")
 
-### STEP05: Tag your custom node-red docker image to be published in your docker-hub private repository
+### STEP09: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
 $ docker tag maiind-node-red:3.0.0 ofertoio/maiind-node-red:3.0.0
  ```
 
-### STEP06: Publish your custom node-red docker image in your private repository to be shared
+### STEP10: Publish your custom node-red docker image in your private repository to be shared
 Previous to publish in your docker-hub respository you must login inside like this:
  ```
 $ docker login
@@ -79,37 +112,4 @@ Then you can publish your image:
 
  ```
 $ docker push ofertoio/maiind-node-red:3.0.0
- ```
-
-### STEP07: Build your custom mongo image
- ```
-$ docker build -t maiind-mongo:1.0.0 .
- ```
-
- ### STEP08: Start your custom mongodb container in the network maiind
- ```
- $ docker run \
- -d \
- --name maiind-mongo \
- --network maiind \
- -p 27017:27017 \
- -e MONGO_INITDB_ROOT_USERNAME=admin \
- -e MONGO_INITDB_ROOT_PASSWORD=password \
- -e MONGO_INITDB_DATABASE=maiind \
- -v mongo_data:/data/db \
- maiind-mongo:1.0.0
- ```
-
- ![mongo-connection](captures/mongo-connection.png "mongo-connection")
-
- ![mongo-compass](captures/mongo-compass.png "mongo-compass")
-
- ### STEP09: Tag your custom mongo docker image to be published in your docker-hub private repository
-```
-$ docker tag maiind-mongo:1.0.0 ofertoio/maiind-mongo:1.0.0
- ```
-
-### STEP10: Publish your custom mongo docker image in your private repository to be shared
- ```
-$ docker push ofertoio/maiind-mongo:1.0.0
  ```
