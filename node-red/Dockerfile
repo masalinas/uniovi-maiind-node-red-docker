@@ -13,7 +13,7 @@ USER node-red
 
 # Copy your Node-RED settings and flows
 COPY $CONFIG_PATH/settings.js /data/settings.js
-COPY $CONFIG_PATH/flows.v3.json /data/flows.json
+COPY $CONFIG_PATH/flows.v4.json /data/flows.json
 
 # Expose node-RED default port
 EXPOSE 1880
