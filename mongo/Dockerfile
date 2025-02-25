@@ -1,4 +1,4 @@
-# Use the official Node-RED image as a base
+# Use the official mongoDB image as a base
 FROM mongo:latest
 
 # Default container configuration folder
