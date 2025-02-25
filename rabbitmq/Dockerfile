@@ -1,7 +1,7 @@
 # Use the official RabbitMQ image as a base
 FROM rabbitmq:4.0-management
 
-# Install additional Node-RED nodes or libraries globally
+# Install additional RabbitMQ plugins
 RUN rabbitmq-plugins enable --offline rabbitmq_mqtt
 
 # Expose node-RED default port
