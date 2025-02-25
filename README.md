@@ -1,5 +1,5 @@
 # Description
-Maiind mongodb, node-red and RabbitMQ custom services deployed as Docker Containers locally and published in your private docker-hub rspository.
+Maiind mongoDB, node-RED and RabbitMQ custom services deployed as Docker Containers locally and published in your private docker-hub rspository.
 
 - The mongoDB service include:
     - Standalone mondoDB with Basic Security credentials: **admin/password**
