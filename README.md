@@ -9,7 +9,7 @@ Maiind mongoDB, node-RED and RabbitMQ custom services deployed as Docker Contain
 - The node-RED service include:
     - Securized with basic credentials: **admin/password**.
     - With [node-red-node-mongodb](https://flows.nodered.org/node/node-red-node-mongodb) and [node-red-dashboard](https://flows.nodered.org/node/node-red-dashboard) nodes just installed.
-    - With a simple flow called **Greeting Flow**.
+    - With a simple flow called **Greeting Flow** and **Mongo Flow**
 
 - The RabbitMQ service include:
     - Securized with basic credentials: **admin/password**.
