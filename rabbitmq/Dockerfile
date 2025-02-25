@@ -1,4 +1,4 @@
-# Use the official Node-RED image as a base
+# Use the official RabbitMQ image as a base
 FROM rabbitmq:4.0-management
 
 # Install additional Node-RED nodes or libraries globally
