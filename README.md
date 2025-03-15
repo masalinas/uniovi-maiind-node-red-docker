@@ -18,3 +18,24 @@ Read more [here](./rabbitmq/README.md)
 
 ### STEP04: Build your custom node-RED docker image
 Read more [here](./node-red/README.md)
+
+### STEP05: use docker compose to start your docker stack
+Start docker stack:
+- Create network 
+- Create docker images
+- Start docker containers
+- Create and attach volumes to docker containers
+
+```
+$ docker-compose up -d 
+```
+
+Stop your docker stack: 
+ - Stop and remove all containers
+ - Remove all volumnes
+ - Remove the network
+ - Remove all docker images
+```
+$ docker-compose down --rmi all -v
+```
+
