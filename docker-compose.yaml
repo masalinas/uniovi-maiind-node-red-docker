@@ -39,6 +39,13 @@ services:
       - node_red_data:/data
     networks:
       - network-name
+
+volumes:
+  mongo_data:
+    driver: local    
+  node_red_data:
+    driver: local
+      
 networks:
-    network-name:
-      name: maiind
+  network-name:
+    name: maiind
