@@ -20,7 +20,7 @@ $ docker run \
 --network maiind \
 -p 1880:1880 \
 -v node_red_data:/data \
-maiind-node-red:4.0.0
+maiind-node-red:1.0.0
 ```
 
 Now we can open the node-RED UI Console from [http://localhost:1880](http://localhost:1880) with credentials **admin/password**
