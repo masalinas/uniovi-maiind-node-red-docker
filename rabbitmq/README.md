@@ -1,7 +1,7 @@
 # Description
 The RabbitMQ service include:
-    - Securized with basic credentials: **admin/password**.
-    - With MQTT Plugin activated
+- Securized with basic credentials: **admin/password**.
+- With MQTT Plugin activated
 
 # Steps 
 Follow the next steps to build and run your docker rabbitmq image.

@@ -1,8 +1,8 @@
 # Description
 The mongoDB service include:
-    - Standalone mondoDB with Basic Security credentials: **admin/password**
-    - Sample Database.
-    - Sample Collection with some Documents.
+- Standalone mondoDB with Basic Security credentials: **admin/password**
+- Sample Database.
+- Sample Collection with some Documents.
 
 # Steps 
 Follow the next steps to build and run your docker mongodb image.
