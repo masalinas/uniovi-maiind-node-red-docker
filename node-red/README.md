@@ -9,7 +9,7 @@ Follow the next steps to build and run your docker node-RED image.
 
 ### STEP01: Build your custom node-red docker image
  ```
-$ docker build -t maiind-node-red:4.0.0 .
+$ docker build -t maiind-node-red:1.0.0 .
  ```
 
 ### STEP02: Start your custom node-red docker container in the network maiind
