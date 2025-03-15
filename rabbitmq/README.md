@@ -26,7 +26,7 @@ maiind-rabbitmq:1.0.0
 
 Now we can open the RabbitMQ Management Console from [http://localhost:15672](http://localhost:15672) with credentials **admin/password**
 
-![RabbitMQ Management](captures/rabbitmq-management.png "RabbitMQ Management")
+![RabbitMQ Management](../captures/rabbitmq-management.png "RabbitMQ Management")
 
 ### STEP03: Build your custom rabbitmq docker image
  ```

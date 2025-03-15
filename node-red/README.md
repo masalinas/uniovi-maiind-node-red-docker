@@ -25,13 +25,13 @@ maiind-node-red:4.0.0
 
 Now we can open the node-RED UI Console from [http://localhost:1880](http://localhost:1880) with credentials **admin/password**
 
-![Porainer](captures/portainer.png "Porainer")
+![Porainer](../captures/portainer.png "Porainer")
 
-![node-red-login](captures/node-red-login.png "node-red-login")
+![node-red-login](../captures/node-red-login.png "node-red-login")
 
-![greetings-flow](captures/greetings-flow.png "greetings-flow")
+![greetings-flow](../captures/greetings-flow.png "greetings-flow")
 
-![mongo-flow](captures/mongo-flow.png "mongo-flow")
+![mongo-flow](../captures/mongo-flow.png "mongo-flow")
 
 **NOTE**: the mongodb flows imported by the image not set the mongo credentials by security. You must set after login inside node-RED
 

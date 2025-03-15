@@ -28,9 +28,9 @@ $ docker build -t maiind-mongo:1.0.0 .
 
 We can use the Open source mongoDB manager called [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
 
- ![mongo-connection](captures/mongo-connection.png "mongo-connection")
+ ![mongo-connection](../captures/mongo-connection.png "mongo-connection")
 
- ![mongo-compass](captures/mongo-compass.png "mongo-compass")
+ ![mongo-compass](../captures/mongo-compass.png "mongo-compass")
 
  ### STEP04: Tag your custom mongo docker image to be published in your docker-hub private repository
 ```
