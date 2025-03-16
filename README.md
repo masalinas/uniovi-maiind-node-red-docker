@@ -1,5 +1,5 @@
 # Description
-Poc using a MongoDB, RabbitMQ and node-RED services integrated and package as Docker Images.
+PoC using a MongoDB, RabbitMQ and node-RED services integrated and package as Docker Images.
 
 # Steps 
 Follow these steps to build and run your MongoDB, RabbitMQ and node-RED Docker services:
