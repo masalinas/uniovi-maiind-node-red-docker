@@ -45,10 +45,8 @@ services:
 
 volumes:
   mongo_data:
-    driver: local
     name: mongo_data    
   node_red_data:
-    driver: local
     name: node_red_data
       
 networks:
