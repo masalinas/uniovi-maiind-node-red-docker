@@ -1,0 +1,48 @@
+version: "3.7"
+services:
+  database:
+    image: ofertoio/maiind-mongo:1.0.0
+    container_name: maiind-mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=maiind
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password      
+    volumes:
+      - mongo_data:/data/db     
+    networks:
+      - network-name
+  broker:
+    image: ofertoio/maiind-rabbitmq:1.0.0
+    container_name: maiind-rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=password
+    networks:
+      - network-name
+  gateway:
+    image: ofertoio/maiind-node-red:1.0.0
+    depends_on:
+      - database      
+      - broker  
+    container_name: maiind-node-red
+    ports:
+      - 1880:1880
+    volumes:
+      - node_red_data:/data
+    networks:
+      - network-name
+
+volumes:
+  mongo_data:
+    driver: local    
+  node_red_data:
+    driver: local
+      
+networks:
+  network-name:
+    name: maiind

@@ -37,10 +37,10 @@ Now we can open the node-RED UI Console from [http://localhost:1880](http://loca
 
 ### STEP03: Tag your custom node-red docker image to be published in your docker-hub private repository
 ```
-$ docker tag maiind-node-red:4.0.0 ofertoio/maiind-node-red:4.0.0
+$ docker tag maiind-node-red:1.0.0 ofertoio/maiind-node-red:1.0.0
  ```
 
 ### STEP04: Publish your custom node-red docker image in your private repository to be shared
  ```
-$ docker push ofertoio/maiind-node-red:4.0.0
+$ docker push ofertoio/maiind-node-red:1.0.0
  ```
