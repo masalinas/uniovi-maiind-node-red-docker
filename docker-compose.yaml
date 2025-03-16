@@ -3,6 +3,7 @@ services:
   database:
     build:
       context: ./mongo
+    image: ofertoio/maiind-mongo:1.0.0
     container_name: maiind-mongo
     ports:
       - 27017:27017
@@ -17,6 +18,7 @@ services:
   broker:
     build:
       context: ./rabbitmq
+    image: ofertoio/maiind-rabbitmq:1.0.0
     container_name: maiind-rabbitmq
     ports:
       - 15672:15672
@@ -29,6 +31,7 @@ services:
   gateway:
     build:
       context: ./node-red
+    image: ofertoio/maiind-node-red:1.0.0
     depends_on:
       - database      
       - broker  
@@ -42,9 +45,11 @@ services:
 
 volumes:
   mongo_data:
-    driver: local    
+    driver: local
+    name: mongo_data    
   node_red_data:
     driver: local
+    name: node_red_data
       
 networks:
   network-name:
