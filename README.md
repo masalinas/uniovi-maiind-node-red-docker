@@ -19,7 +19,7 @@ Read more [here](./rabbitmq/README.md)
 ### STEP04: Build your custom node-RED docker image
 Read more [here](./node-red/README.md)
 
-### STEP05: use docker compose to start your docker stack locally
+### STEP05: use docker compose to start your local docker stack 
 Start docker stack:
 - Create network 
 - Create docker images
@@ -39,7 +39,7 @@ Stop your docker stack:
 $ docker-compose down --rmi all -v
 ```
 
-### STEP06: use docker compose to start your docker stack production
+### STEP06: use docker compose to start your production docker stack
 Start docker stack:
 - Create network 
 - Pull docker images
