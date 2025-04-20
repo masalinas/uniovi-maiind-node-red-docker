@@ -3,7 +3,7 @@ services:
   database:
     build:
       context: ./mongo
-    platform: linux/arm64
+    platform: linux/arm64 # optional for windows or linux environments
     image: ofertoio/maiind-mongo:1.0.0
     container_name: maiind-mongo
     ports:
